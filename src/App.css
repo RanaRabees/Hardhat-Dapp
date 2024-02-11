@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+  /* Transparent track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, green, burlywood, #007bff, #c0ca33);
+  /* background: linear-gradient(to top, #007bff, #c0ca33, blue, pink, green, orange, aquamarine, brown, burlywood, cadetblue); */
+  border-radius: 20px;
+  animation: twister 5s linear infinite;
+  box-shadow: 0 2.8px 2.2px rgba(255, 255, 255, 0.34),
+    0 6.7px 5.3px rgba(255, 255, 255, 0.048),
+    0 12.5px 10px rgba(255, 255, 255, 0.06),
+    0 22.3px 17.9px rgba(255, 255, 255, 0.072),
+    0 41.8px 33.4px rgba(255, 255, 255, 0.086),
+    0 100px 80px rgba(255, 255, 255, 0.12);
+}
+
+body::-webkit-scrollbar-thumb::before,
+body::-webkit-scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: inherit;
+  border-radius: 10px;
+  animation: twister-tails 5s linear infinite;
+}
+
+body::-webkit-scrollbar-thumb::before {
+  left: 2px;
+  transform: rotate(-5deg);
+}
+
+body::-webkit-scrollbar-thumb::after {
+  right: 2px;
+  transform: rotate(5deg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@keyframes twister {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes twister-tails {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(4deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+.container {
+
+  @media screen and (min-width: 992px) and (max-width: 1439px) {
+    max-width: 1279px !important;
+    padding: 0 2rem;
+    /* margin: 0 80px !important; */
+    width: auto !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    max-width: 959px !important;
+    /* margin: 0 16px !important; */
+    padding: 0 2rem;
+    width: auto !important;
+  }
+}
+
+.gradient-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container-title {
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.container-description {
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.Button {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 550px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.container-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+}
+
+.bg-green-box,
+.bg-white-box,
+.bg-yellow-box,
+.bg-blue-box {
+  position: relative;
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-green-box::after {
+  background: linear-gradient(71deg, #0d1212, #3da077, #0d1212);
+}
+
+.bg-white-box::after {
+  background: linear-gradient(71deg, #121013, #b0afb0, #121013);
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.bg-blue-box::after {
+  background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+}
+
+.card-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
+
+/* Logo Animation (optional)
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 1s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
